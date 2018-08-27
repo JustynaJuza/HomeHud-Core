@@ -1,0 +1,19 @@
+@import './variables.css';
+@import './shared-components.css';
+
+.container {
+    @extend small_rounded_container;
+}
+
+.hidden {
+    display: none;
+}
+
+.name {
+    @extend uppercase_name;
+}
+
+.button {
+    @mixin button;
+    min-width: 190px;
+}

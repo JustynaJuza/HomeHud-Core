@@ -1,0 +1,67 @@
+@import './variables.css';
+@import './shared-components.css';
+
+html{
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+input, button, select, a {
+    @mixin featureFont;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &:focus {
+        text-decoration: none;
+        outline-color: $focus_outline_color;
+    }
+}
+
+body {
+    @mixin baseFont;
+
+    min-width: 360px;
+    margin: 0;
+    padding: 0;
+    background: $body_color;
+    width: 100%;
+    height: 100%;
+    font-size: 14px;
+    color: $color_text_black;
+
+    ::-webkit-scrollbar {
+        background: $black;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background: $color_accent_secondary;
+    }
+}
+
+.layout {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-items: center;
+    align-content: stretch;
+}
+
+.content {
+    flex-grow: 1;
+    width: 100%;
+    margin: 0 auto;
+    background: $content_background_gradient_1;
+    background: -webkit-linear-gradient(to top, $content_background_gradient_2, $content_background_gradient_1);
+    background: linear-gradient(to top, $content_background_gradient_2, $content_background_gradient_1);
+    background-size: cover;
+}

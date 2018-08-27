@@ -1,0 +1,28 @@
+@import './variables.css';
+@import './shared-components.css';
+
+.container {
+    width: 100%;
+    overflow-x: auto;
+    margin: 0 0 2.5em 0;
+    background-color: $nav_color;
+}
+
+.list {
+    flex-shrink: 0;
+
+    width: 100%;
+    height: $nav_height;
+
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    background-color: $nav_color;
+
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: stretch;
+    align-content: stretch;
+}

@@ -1,0 +1,62 @@
+@import './variables.css';
+@import './shared-components.css';
+
+.tab {
+    @mixin navTabBorder;
+
+    color: $nav_text_color;
+    transition: 0.3s;
+
+    &:hover {
+        color: $nav_text_color--hover;
+        background: $nav_hover_color;
+    }
+
+    width: 100%;
+    min-width: 155px;
+}
+
+.link {
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-align: center;
+    padding: 0.8em 1.5em;
+    text-decoration: none;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+
+    &:hover {
+        background-color: transparent;
+        color: inherit;
+        text-decoration: none;
+    }
+
+    &:focus {
+        background-color: transparent;
+        color: inherit;
+        text-decoration: none;
+    }
+}
+
+.active {
+    color: $nav_active_text_color;
+    background: $nav_active_color;
+
+    &:hover {
+        color: $nav_active_hover_text_color;
+        background: $nav_active_hover_color;
+    }
+}
+
+.name {
+    @extend uppercase_name;
+    @mixin navFont;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+}

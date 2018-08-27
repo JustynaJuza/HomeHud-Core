@@ -1,0 +1,80 @@
+@import './variables.css';
+@import './shared-components.css';
+
+.switching_on, .switching_off {
+    pointer-events: none;
+}
+
+.light {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: stretch;
+
+    &.on .switcher,
+    &.switching_on .switcher {
+        right: 0;
+        left: auto;
+        border: 1px solid #5ea617;
+        background: #8DD297;
+    }
+
+    &.off .switcher,
+    &.switching_off .switcher  {
+        right: auto;
+        left: 0;
+    }
+    &.on .icon {
+        background-color: $lightSwitchOn_color;
+    }
+    &.off .icon {
+        background-color: $lightSwitchOff_color;
+    }
+    &.switching_on .icon {
+        background-color: $lightSwitchingOn_color;
+    }
+    &.switching_off .icon {
+        background-color: $lightSwitchingOff_color;
+    }
+}
+.light_switcher {
+    @mixin softerEdges;
+    @mixin boxShadow inset;
+
+    position: relative;
+    width: 10em;
+    height: 5em;
+    margin: 1em;
+    background: $white;
+}
+
+.switcher {
+    @mixin softerEdges;
+
+    width: 50%;
+    padding: 0;
+    margin: 0.2em;
+    border: 1px solid $default_border;
+    /*background-color: $default_button_color;*/
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    bottom: 0;
+    transition: .4s;
+    outline-color: transparent;
+
+    &:hover {
+        background-color: $default_button_hover_color;
+    }
+}
+
+.icon {
+    height: 50px;
+    width: 50px;
+    border-radius: 20px;
+    padding: 0;
+    margin: 1em;
+    transition: .4s;
+}

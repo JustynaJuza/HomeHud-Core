@@ -1,0 +1,11 @@
+@import './variables.css';
+@import './shared-components.css';
+
+.container {
+    @extend small_rounded_container;
+}
+
+.button {
+    @mixin button;
+    min-width: 190px;
+}

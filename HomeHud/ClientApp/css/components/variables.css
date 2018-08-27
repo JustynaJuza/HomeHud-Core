@@ -1,0 +1,157 @@
+@custom-media --medium-viewport (min-width: 768px) and (max-width: 992px);
+@custom-media --small-viewport (max-width: 768px);
+@custom-media --tiny-viewport (max-width: 550px);
+@custom-media --phone (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi);
+
+$nav_height: 5em;
+
+$default_border: #bcbcbc;
+
+$color_accent_green: #BBFF33;
+$color_accent_yellow: #FFC300;
+$color_accent_darkYellow: #93761A;
+$color_accent_darkBrown: #3E3A2D;
+$color_accent_lightBrown: #8A8362;
+$color_accent_lime: #DAF7A6;
+$color_accent_orange: #FF5733;
+$color_accent_rose: #C70039;
+$color_accent_blue: #1F3E6F;
+$color_accent_black: #1B1B1B;
+
+$color_background_purple: #900C3F;
+$color_background_plum: #581845;
+$color_background_2: #acacac;
+$color_background_3: #c3c3c3;
+$color_background_4: #f1f1f1;
+$color_text_dark: #ccc;
+$color_text_black: #222;
+$color_text_shadow: rgba(0, 0, 0, .26);
+
+
+$white: #efefef;
+$black: #222;
+$shadow: rgba(0, 0, 0, 0.11);
+$color_accent_primary: #22c1c3;
+$color_accent_secondary: #fdbb2d;
+$color_accent_ternary: #C70039;
+$color_backing_primary: #f1f1f1;
+$color_backing_secondary: #e1e1e1;
+$color_backing_black: #081017;
+
+$content_background: url('../media/background.jpg');
+$content_background_gradient_1: $color_accent_primary;
+$content_background_gradient_2: $color_accent_secondary;
+
+$body_color: #fff;
+$content_color: #fff;
+$error_color: #C70039;
+
+$focus_outline_color: $color_accent_ternary;
+
+$header_text_color: #fff;
+$header_color: #fff;
+$header_border_color: $color_text_black;
+
+$nav_color: $color_backing_primary;
+$nav_text_color: $black;
+$nav_text_color--hover: $black;
+$nav_border_color: $black;
+$nav_border_color--hover: $color_accent_ternary;
+
+$nav_active_color: $color_backing_black;
+$nav_active_text_color: $white;
+$nav_active_border_color: $nav_border_color;
+
+$nav_hover_color: $color_backing_secondary;
+$nav_active_hover_color: $color_text_black;
+$nav_active_hover_text_color: $white;
+
+$default_button_color: #fff;
+$default_button_text_color: $color_text_black;
+$default_button_active_color: $color_background_3;
+$default_button_hover_color: $white;
+
+$lightSwitchOn_color: $color_accent_yellow;
+$lightSwitchingOn_color: $color_accent_darkYellow;
+$lightSwitchOff_color: $color_accent_darkBrown;
+$lightSwitchingOff_color: $color_accent_lightBrown;
+
+
+@define-mixin baseFont {
+    font-family: 'Francois One', sans-serif;
+}
+
+@define-mixin navFont {
+    font-family: 'Fjalla One', sans-serif;
+    letter-spacing: 0.05em;
+    font-size: 1.2em;
+    line-height: 1.2em;
+}
+
+@define-mixin featureFont {
+    /*font-family: 'Cabin', sans-serif;*/
+    font-family: 'Assistant', sans-serif;
+    /*font-family: 'Sigmar One', sans-serif;*/
+    /*font-family: 'Montserrat Subrayada', sans-serif;*/
+}
+
+@define-mixin logoFont {
+    /*font-family: 'Anton', sans-serif;*/
+    font-family: 'Fjalla One', sans-serif;
+}
+
+@define-mixin softerEdges {
+    border-radius: 2px;
+}
+
+@define-mixin hugeShadow {
+    color: rgba(255,255,255,1);
+    text-overflow: clip;
+    text-shadow: longTextShadow(3, 16, #333);
+}
+
+@define-mixin hugeShadowOutline {
+    color: rgba(255,255,255,1);
+    letter-spacing: 0.03em;
+    text-overflow: clip;
+    text-shadow:
+        -1px -1px 0 $color_text_black,
+        1px -1px 0 $color_text_black,
+        -1px 1px 0 $color_text_black,
+        1px 1px 0 $color_text_black,
+        longTextShadow(3, 10, $color_text_black);
+}
+
+@define-mixin hugeShadowOutline_box {
+    box-shadow: 3px 3px 0px $color_text_black;
+}
+
+
+@define-mixin textShadow {
+    text-shadow: 0 1px 1px rgba(150, 150, 150, 0.5);
+}
+
+@define-mixin boxShadow $mode, $color:$shadow {
+    box-shadow: $(mode) $(color) 0 1px 6px, $(mode) $(color) 0 1px 4px;
+}
+
+@define-mixin square $size {
+    width: $(size);
+    height: $(size);
+}
+
+@define-mixin containerBorder {
+    border: 3px solid $color_accent_ternary;
+}
+
+@define-mixin navTabBorder {
+    border-bottom: 3px solid $nav_border_color;
+
+    &.active {
+        border-color: $nav_active_border_color;
+    }
+
+    &:hover {
+        border-color: $nav_border_color--hover;
+    }
+}
